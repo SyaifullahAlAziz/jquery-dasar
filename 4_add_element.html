@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JQuery</title>
+    <script src="assets/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <h1>Belajar JQuery</h1>
+    <div id="box1">Box 1</div>
+
+    <div id="boxes_wrap">
+        <div class="boxes">Baris Pertama</div>
+        <div class="boxes">Baris Kedua</div>
+        <div class="boxes">Baris Ketiga</div>
+        <div class="boxes">Baris Keempat</div>
+    </div>
+
+    <form action="">
+        <input type="text" id="inputText">
+        <input type="submit">
+    </form>
+
+    <script>
+            $(document).ready(function() {
+                // //Menampilkan Diawal dan Di Dalam Div
+                $('#boxes_wrap').prepend('<p style="color:green;"> Halo </p>')
+                // //Menampilkan Diawal dan Di Luar Div
+                $('#boxes_wrap').before('<p style="color:green;"> Halo </p>')
+
+                // //Menampilkan Diakhir dan Di Dalam Div
+                $('#boxes_wrap').append('<p style="color:green;"> Halo </p>')
+                //Menampilkan Diakhir dan Di Luar Div
+                $('#boxes_wrap').after('<p style="color:green;"> Halo </p>')
+
+                //menghapus elemen
+                $('#boxes_wrap').remove()
+            })
+    </script>
+    
+</body>
+</html>

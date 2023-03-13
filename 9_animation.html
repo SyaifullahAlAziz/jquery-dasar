@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JQuery</title>
+    <script src="assets/jquery-3.6.3.min.js"></script>
+    <style>
+        #box1 {
+            background : grey;
+            width : 100px;
+            height : 100px;
+            padding : 10px;
+            margin : 10px;
+        }
+    </style>
+</head>
+<body>
+   <h1 class="change">Belajar JQuery</h1>
+   <div id="box1">Box 1</div>
+   <br>
+
+   <button id="btn1">Show</button>
+   <button id="btn2">Hidden</button>
+   <button id="btn3">Toggle</button>
+   <button id="btn4">Stop</button>
+    
+   <script>
+    $(document).ready(function() {
+        // slideDown slideUp slideToggle
+        $('#btn2').click(function(){
+            $('#box1').slideUp(3000)
+        })
+        $('#btn3').click(function(){
+            $('#box1').slideToggle(3000)
+        })
+
+        $('#btn4').click(function(){
+            $('#box1').stop(2000)
+        })
+
+        // Callback
+        $('#btn1').click(function(){
+            $('#box1').slideDown(3000, function(){
+            alert('selesai')
+            })
+        })
+        
+        // Chaining
+        $('#btn2').click(function(){
+            $('#box1').slideUp(3000).fadeIn(3000).fadeTo(2000, 0.5)
+        })
+
+    })
+   </script>
+</body>
+</html>

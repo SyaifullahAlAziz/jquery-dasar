@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar jQuery</title>
+    <script src="assets/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <div id="tester">
+        <div>
+            Si Paling Div
+        </div>
+
+        <div>
+            Si Div Kedua
+        <ul>
+            <li>List Pertama</li>
+        </ul>
+
+            <ul>
+                <p>Paragraf Atas</p>
+                <li>Belajar</li>
+                <li>HTML</li>
+                <li id="css">CSS</li>
+                <li>jQuery</li>
+                <li>PHP</li>
+                <li id="db">Database</li>
+                <div>
+                    <p>Paragraf Dalam</p>
+                    <span>Span Dalam</span>
+                </div>
+                <span>Span Luar</span>
+            </ul>
+        </div>          
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            //children - find - parent - parents() - parentsUntil 
+
+            //Semua anaknya yang satu level dibawahnya
+            $('ul').children().css('color', 'red')
+            $('ul').children('span').css('color', 'red')
+            
+            //Memilih semua anaknya
+            $('ul').find('span').css('color', 'red')
+
+            //Memilih level diatasnya
+            $('#css').parent().css('background', 'yellow')
+            //Memilih Semuanya
+            $('#css').parents().css('border', '2px solid yellow')
+            //Hanya memilih ul
+            $('#css').parents('ul').css('border', '2px solid yellow')
+
+            $('#css').parentsUntil('#tester').css('border', '2px solid yellow')
+
+
+        })
+    </script>
+    
+</body>
+</html> 

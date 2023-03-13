@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JQuery</title>
+    <script src="assets/jquery-3.6.3.min.js"></script>
+
+    <style>
+        .change {
+            background: yellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="change">Belajar JQuery</h1>
+    <div id="box1">Box 1</div>
+
+    <div class="boxes">Baris Pertama</div>
+    <div class="boxes">Baris Kedua</div>
+    <div class="boxes">Baris Ketiga</div>
+    <div class="boxes">Baris Keempat</div>
+
+    <script>
+        //ketika diklik
+        $('h1').click(function() {
+            // $('h1').css({
+            //     'color': 'red',
+            //     'fontSize' : '20px',
+            //     'backgroundColor' : 'yellow'
+            // })        
+
+            // $('h1').addClass('change');
+            // $('h1').removeClass('change');
+            
+            //Gabungan Add dan Remove
+            //Jika sudah ada classnya akan menghapus - Jika belum ada classnya akan menambahkan
+            $('h1').toggleClass('change');
+        })
+
+        //ketika diarahkan
+        $('h1').mouseenter(function() {
+            $('h1').css('color', 'yellow')        
+        })
+        
+        //ketika kursor diluar
+        $('h1').mouseleave(function() {
+            $('h1').css('color', 'green')        
+        })
+
+        //ketika kursor diarahkan
+        $('.boxes').click(function() {
+            $(this).css('color', 'yellow')        
+        })
+    </script>
+    
+</body>
+</html>
